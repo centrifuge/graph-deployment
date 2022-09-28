@@ -9,4 +9,4 @@ resources:
 numberOfInstances: 2
 
 volume:
-  size: 250Gi
+  size: 100Gi # Testing purposes only

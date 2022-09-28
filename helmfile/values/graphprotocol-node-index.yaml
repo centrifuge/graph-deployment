@@ -5,11 +5,11 @@ config:
 
   # Configuration of connected blockchain metrics and their providers
   chains:
-    # mainnet:
-    #   providers:
-    #   - label: mainnet
-    #     url:
-    #     features: [ archive ]
+    mainnet:
+      providers:
+      - label: mainnet
+        url:
+        features: [ archive ]
     # rinkeby:
     #   providers:
     #   - label: rinkeby
@@ -38,4 +38,4 @@ resources:
 role: "index-node"
 
 monitoring:
-  enabled: true
+  enabled: false
