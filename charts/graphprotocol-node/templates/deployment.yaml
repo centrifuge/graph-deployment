@@ -80,6 +80,34 @@ spec:
                   name: {{ include "graphprotocol-node.fullname" . }}
                   key: pgPass
                 {{- end }}
+            # - name: RUST_LOG
+            #   value: debug
+            # - name: GRAPH_LOG
+            #   value: debug            
+            - name: GRAPH_ALLOW_NON_DETERMINISTIC_IPFS
+              value: "true"
+            - name: GRAPH_ETH_CALL_BY_NUMBER
+              value: "true"
+            - name: GRAPH_MAX_GAS_PER_HANDLER
+              value: "1_000_000_000_000_000"
+            - name: ETHEREUM_BLOCK_BATCH_SIZE
+              value: "50" # Default: 10
+            - name: ETHEREUM_TRACE_STREAM_STEP_SIZE
+              value: "100" # Default 50
+            - name: GRAPH_ETHEREUM_MAX_BLOCK_RANGE_SIZE
+              value: "2000" # Default 1000
+            - name: GRAPH_ETHEREUM_MAX_EVENT_ONLY_RANGE
+              value: "1000" # Default 500
+            # - name: GRAPH_MAX_IPFS_CONCURRENT_REQUESTS
+            #   value: "300" # Default 100
+            # - name: GRAPH_MAX_IPFS_CACHE_SIZE
+            #   value: "200" # Default 50
+            # - name: GRAPH_MAX_IPFS_CACHE_FILE_SIZE
+            #   value: 2MiB # Default 1MiB
+            # - name: GRAPH_MAX_IPFS_FILE_BYTES
+            #   value: 512MiB # Default 256MiB
+            # - name: GRAPH_MAX_IPFS_MAP_FILE_SIZE
+            #   value: 512MB # Default 256MB
           ports:
             - name: metrics
               containerPort: 8040
