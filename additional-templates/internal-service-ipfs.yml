@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipfs-internal-lb
+  annotations:
+    networking.gke.io/load-balancer-type: "Internal"
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  selector:
+    app: ipfs 
+  ports:
+  - port: 5001
+    targetPort: 5001
+    protocol: TCP
+    name: api
