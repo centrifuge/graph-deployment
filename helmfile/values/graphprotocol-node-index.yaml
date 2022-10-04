@@ -19,7 +19,7 @@ config:
 postgres:
   db: graph
   host: 10.32.66.2
-  replicaHost: postgres-postgres-repl
+  # replicaHost: postgres-postgres-repl
   user: graphnode
   password:
     fromSecret:
@@ -31,6 +31,9 @@ resources:
   requests:
     cpu: 4
     memory: 6Gi
+  limits:
+    cpu: 6
+    memory: 7.5Gi
     # ephemeral-storage: 10Gi
   
 

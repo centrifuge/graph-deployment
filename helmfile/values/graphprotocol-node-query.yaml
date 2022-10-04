@@ -19,7 +19,7 @@ config:
 postgres:
   db: graph
   host: 10.32.66.2
-  replicaHost: postgres-postgres-repl
+  # replicaHost: postgres-postgres-repl
   user: graphnode
   password:
     fromSecret:
@@ -33,6 +33,9 @@ resources:
   requests:
     cpu: 2
     memory: 4Gi
+  limits:
+    cpu: 4
+    memory: 5Gi
     # ephemeral-storage: 10Gi
 
 role: "query-node"
@@ -44,10 +47,10 @@ monitoring:
 ingress:
   enabled: enabled
   hosts:
-  - graph.ctrfg.com
+  - graph.cntrfg.com
   tls:
   - hosts:
-    - graph.ctrfg.com
+    - graph.cntrfg.com
     secretName: query-node-https
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-issuer"
@@ -56,7 +59,7 @@ ingress:
 
 # If you are using standalone installation option it could be useful for you to enable ingress to allow your application outside of the cluster connect to query-nodes by graphql websocket.
 ingressWebsocket:
-  enabled: false
+  enabled: disabled
   hosts:
   - graph-ws.ctrfg.com
   tls:
