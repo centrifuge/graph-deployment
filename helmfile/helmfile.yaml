@@ -70,10 +70,10 @@ releases:
   chart: ../charts/ipfs
   labels:
     component: ipfs
-  values:
-  - args:
-    - --migrate=true
+  # values:
+  # - args:
+  #   - --migrate=true
     # Prevent IPFS from connecting to IPFS network
     # It would prevent your files from sharing with network and would prevent your applications from using external files
-    - --offline
+    # - --offline
   installed: {{ .Values.installIpfs }}
