@@ -9,7 +9,7 @@ config:
       providers:
       - label: mainnet
         url: "https://bold-dark-butterfly.quiknode.pro/a20279d543f45cd11a394ce5b769f9753e1768c7/"
-        features: [ archive ]
+        features: [ archive, traces ]
     # rinkeby:
     #   providers:
     #   - label: rinkeby
