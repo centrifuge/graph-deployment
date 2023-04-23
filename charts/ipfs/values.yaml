@@ -18,17 +18,20 @@ service:
 profile: server
 
 ingressApi:
-  enabled: false
-    # hosts:
-    # - ipfs-api.localhost.localdomain
-    # - localhost.localdomain/ipfs-api
-    # annotations:
-    #   kubernetes.io/ingress.class: nginx
-    #   kubernetes.io/tls-acme: "true"
-    # tls:
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
+  enabled: true
+  hosts:
+    - ipfs-api.graph.ctrfg.com
+    # - graph.ctrfg.com/ipfs-api
+  annotations:
+    # kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: gce-internal
+    # cert-manager.io/cluster-issuer: dns-01-issuer
+    # kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.allow-http: "true"
+  # tls:
+  #   - secretName: ipfs-api-tls
+  #     hosts:
+  #       - ipfs-api.graph.ctrfg.com
 
 ingressGateway:
   enabled: false
