@@ -8,7 +8,7 @@ config:
     mainnet:
       providers:
       - label: mainnet
-        url: "https://magical-still-grass.quiknode.pro/653d5fa3dd62f717496030b69e5c2b70aa16dfd1/"
+        url: "https://bold-dark-butterfly.quiknode.pro/a20279d543f45cd11a394ce5b769f9753e1768c7/"
         features: [ archive, traces ]
     # rinkeby:
     #   providers:
